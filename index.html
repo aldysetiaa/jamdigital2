@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jam Digital</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{
+			background-image: url('wall.jpg');
+			background-repeat: no-repeat;
+		}
+
+		#jam{	
+			font-family: 'Roboto', sans-serif;
+	    margin-top:  3px;
+	    font-size: 55px;
+	    color: #fff;
+	    margin-bottom: 2px;
+		}
+
+		.waktu{
+			font-family: 'Lato', sans-serif;
+			margin-top: 150px;
+			margin-bottom: 9px;
+			font-size: 20px;
+			color: #fff;
+		}
+		.login{
+
+			font-family: 'Lato', sans-serif;
+	    color: #fff;
+ 			padding: 8px;
+  	  border-width: 2px;
+	    border-style: solid;
+    	border-radius: 30px;
+    	width: 10%;
+		}
+
+	</style>
+
+	 <script type="text/javascript">
+   
+    function displayTime(){
+      var clientTime=new Date();
+      var time=new Date(clientTime.getTime());
+      var sh=time.getHours().toString();
+      var sm=time.getMinutes().toString();
+      var ss=time.getSeconds().toString();
+    	document.getElementById("jam").innerHTML=(sh.length==1?"0"+sh:sh)+":"+(sm.length==1?"0"+sm:sm)+":"+(ss.length==1?"0"+ss:ss);
+    	document.getElementById("jaminput").value = (sh.length==1?"0"+sh:sh)+":"+(sm.length==1?"0"+sm:sm)+":"+(ss.length==1?"0"+ss:ss);
+	}
+  </script> 
+
+</head>
+<body  onload="setInterval('displayTime()', 1000);">
+ 	<center>
+ 		<p class="waktu">Waktu Sekarang</p>
+		<h1 id="jam"></h1> 
+		<br> 
+		<p class="login">Please Login</p>
+	</center>
+</body>
+</html>
